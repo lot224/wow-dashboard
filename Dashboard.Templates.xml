@@ -1,0 +1,251 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\..\FrameXML\UI.xsd">
+
+	<Button name="DashboardMoneyTemplate" hidden="false" virtual="true">
+		<Size>
+			<AbsDimension x="196" y="15"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<FontString name="$parentCopper" inherits="GameFontHighlightSmall" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="24" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.93" g="0.65" b="0.37" a="1.0"/>
+				</FontString>
+				<FontString name="$parentSilver" inherits="GameFontHighlightSmall" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="24" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT" relativeTo="$parentCopper" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="0.78" g="0.78" b="0.81" a="1.0"/>
+				</FontString>
+				<FontString name="$parentGold" inherits="GameFontHighlightSmall" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="148" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT" relativeTo="$parentSilver" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<Color r="1" g="0.84" b="0" a="1.0"/>
+				</FontString>
+			</Layer>
+		</Layers>
+	</Button>
+
+	<Button name="DashboardIconButtonTemplate" virtual="true">
+		<Size>
+			<AbsDimension x="37" y="37"/>
+		</Size>
+		<Layers>
+			<Layer level="BORDER">
+				<Texture name="$parentIconTexture" setAllPoints="true" hidden="true"/>
+			</Layer>
+		</Layers>
+
+		<NormalTexture name="$parentNormalTexture" file="Interface\Buttons\UI-Quickslot2">
+			<Size>
+				<AbsDimension x="64" y="64"/>
+			</Size>
+			<Anchors>
+				<Anchor point="CENTER">
+					<Offset>
+						<AbsDimension x="0" y="0"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+		</NormalTexture>
+		
+		<HighlightTexture name="$parentHighlight" file="Interface\Buttons\ButtonHilight-Square" alphaMode="ADD"/>
+	</Button>
+
+	<Button name="DashboardButtonTemplate" hidden="false" virtual="true">
+		<Size>
+			<AbsDimension x="809" y="18"/>
+		</Size>
+		<Layers>
+			<Layer level="BACKGROUND">
+
+				<FontString name="$parentValue0" inherits="GameFontNormalSmall" text="" justifyH="LEFT">
+					<Size>
+						<AbsDimension x="125" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT">
+							<Offset>
+								<AbsDimension x="43" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue1" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue0" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue2" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue1" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue3" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue2" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+ 				<FontString name="$parentValue4" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue3" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue5" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue4" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue6" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue5" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue7" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue6" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue8" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue7" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue9" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue8" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<FontString name="$parentValue10" inherits="GameFontWhiteTiny2" text="" justifyH="RIGHT">
+					<Size>
+						<AbsDimension x="60" y="16"/>
+					</Size>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentValue9" relativePoint="TOPRIGHT" x="2" y="0"/>
+					</Anchors>
+				</FontString>
+
+				<Texture name="$parentLeft" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+					<Size>
+						<AbsDimension x="10" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT">
+							<Offset>
+								<AbsDimension x="34" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0" right="0.078125" top="0" bottom="1.0"/>
+				</Texture>
+				
+				<Texture name="$parentRight" file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+					<Size>
+						<AbsDimension x="10" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="2"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.75" right="0.828125" top="0" bottom="1.0"/>
+				</Texture>
+
+				<Texture file="Interface\AuctionFrame\UI-AuctionItemNameFrame">
+					<Size>
+						<AbsDimension x="10" y="18"/>
+					</Size>
+					<Anchors>
+						<Anchor point="LEFT" relativeTo="$parentLeft" relativePoint="RIGHT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+						<Anchor point="RIGHT" relativeTo="$parentRight" relativePoint="LEFT">
+							<Offset>
+								<AbsDimension x="0" y="0"/>
+							</Offset>
+						</Anchor>
+					</Anchors>
+					<TexCoords left="0.078125" right="0.75" top="0" bottom="1.0"/>
+				</Texture>
+			</Layer>
+		</Layers>
+		<HighlightTexture name="$parentHighlight" file="Interface\HelpFrame\HelpFrameButton-Highlight" alphaMode="ADD">
+			<Size>
+				<AbsDimension x="771" y="18"/>
+			</Size>
+			<Anchors>
+				<Anchor point="TOPLEFT">
+					<Offset>
+						<AbsDimension x="37" y="2"/>
+					</Offset>
+				</Anchor>
+			</Anchors>
+			<TexCoords left="0" right="1.0" top="0" bottom="0.578125"/>
+		</HighlightTexture>
+
+	</Button>
+</Ui>

@@ -1,0 +1,9 @@
+<Bindings>
+	<Binding name="DASHBOARD" header="DASHBOARD" category="ADDONS">
+		if (Dashboard.frame:IsShown()) then
+			Dashboard.frame:Hide();
+		else
+			Dashboard.slash();
+		end
+	</Binding>
+</Bindings>

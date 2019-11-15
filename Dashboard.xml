@@ -1,0 +1,363 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/..\..\FrameXML\UI.xsd">
+  <Script file="Dashboard.UI.lua"/>
+  <Include file="Dashboard.Templates.xml"/>
+	<Frame name="DashboardDataFrame"> 
+		<Scripts> 
+			<OnLoad> 
+				self:RegisterEvent("ADDON_LOADED");
+        self:RegisterEvent("PLAYER_ENTERING_WORLD");
+        self:RegisterEvent("PLAYER_XP_UPDATE");
+        self:RegisterEvent("TRADE_SKILL_UPDATE");
+        self:RegisterEvent("PLAYER_LOGOUT");
+			</OnLoad>
+			<OnEvent function="DashboardDataFrame_OnEvent" />
+		</Scripts>
+	</Frame>
+
+  <GameTooltip name="DashboardTooltip" inherits="GameTooltipTemplate">
+    <Scripts>
+      <Onload>
+        self:SetOwner(WorldFrame, "ANCHOR_NONE");
+      </Onload>
+    </Scripts>
+  </GameTooltip>
+
+	<Frame name="DashboardFrame" toplevel="true" parent="UIParent" enableMouse="true" movable="true" hidden="true">
+		<Size x="832" y="447"/>
+		<Anchors>
+			<Anchor point="TOPLEFT" x="0" y="-104"/>
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="$parentPortraitTexture">
+					<Size x="58" y="58"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="8" y="-7"/>
+					</Anchors>
+				</Texture>
+			</Layer>
+			<Layer level="ARTWORK">
+				<Texture name="$parentTopLeft" file="Interface\AuctionFrame\UI-AuctionFrame-Bid-TopLeft">
+					<Size x="256" y="256"/>
+					<Anchors>
+						<Anchor point="TOPLEFT"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTop" file="Interface\AuctionFrame\UI-AuctionFrame-Auction-Top">
+					<Size x="320" y="256"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="256" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentTopRight" file="Interface\AuctionFrame\UI-AuctionFrame-Auction-TopRight">
+					<Size x="256" y="256"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentTop" relativePoint="TOPRIGHT" x="0" y="0"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBotLeft" file="Interface\AuctionFrame\UI-AuctionFrame-Bid-BotLeft">
+					<Size x="256" y="256"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="0" y="-256"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBot" file="Interface\AuctionFrame\UI-AuctionFrame-Auction-Bot">
+					<Size x="320" y="256"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" x="256" y="-256"/>
+					</Anchors>
+				</Texture>
+				<Texture name="$parentBotRight" file="Interface\AuctionFrame\UI-AuctionFrame-Bid-BotRight">
+					<Size x="256" y="256"/>
+					<Anchors>
+						<Anchor point="TOPLEFT" relativeTo="$parentBot" relativePoint="TOPRIGHT" x="0" y="0"/>
+					</Anchors>
+				</Texture>
+
+
+
+			</Layer>
+
+      <Layer level="OVERLAY">
+        <FontString name="$parentHeaderText" inherits="GameFontNormal" text="Alt Character Dashboard">
+          <Anchors>
+            <Anchor point="TOP" relativeTo="$parent">
+              <Offset>
+                <AbsDimension x="0" y="-19"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+        <FontString name="$parentAuthorText" inherits="GameFontNormal" text="By Armsageddon@Netherwind">
+          <Anchors>
+            <Anchor point="BOTTOMLEFT" relativeTo="$parent">
+              <Offset>
+                <AbsDimension x="190" y="19"/>
+              </Offset>
+            </Anchor>
+          </Anchors>
+        </FontString>
+      </Layer>
+		</Layers>
+		<Frames>
+
+			<Frame name="$parentMoneyFrame" inherits="DashboardMoneyTemplate">
+				<Anchors>
+					<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMLEFT">
+						<Offset>
+							<AbsDimension x="170" y="18"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Frame>
+
+			<Button name="$parentCloseButton" inherits="UIPanelCloseButton">
+				<Anchors>
+					<Anchor point="TOPRIGHT">
+						<Offset>
+							<AbsDimension x="3" y="-8"/>
+						</Offset>
+					</Anchor>
+				</Anchors>
+			</Button>
+
+
+			<Frame name="$parentDetails">
+				<Size x="758" y="447"/>
+				<Anchors>
+					<Anchor point="TOPLEFT"/>
+				</Anchors>
+				<Layers>
+					<Layer level="BACKGROUND">
+						<FontString name="$parentTitle" inherits="GameFontNormal">
+							<Anchors>
+								<Anchor point="TOP" x="0" y="-18"/>
+							</Anchors>
+						</FontString>
+					</Layer>
+					<Layer level="ARTWORK">
+						
+					</Layer>
+				</Layers>
+				<Frames>
+
+          <Button name="$parentIconButton1" inherits="DashboardIconButtonTemplate" id="1">
+            <Anchors>
+              <Anchor point="TOPLEFT" x="180" y="-36"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton2" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton1" relativePoint="TOPRIGHT" x="24" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton3" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton2" relativePoint="TOPRIGHT" x="24" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton4" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton3" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton5" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton4" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton6" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton5" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton7" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton6" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton8" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton7" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton9" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton8" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+          <Button name="$parentIconButton10" inherits="DashboardIconButtonTemplate" id="2">
+            <Anchors>
+              <Anchor point="TOPLEFT" relativeTo="$parentIconButton9" relativePoint="TOPRIGHT" x="25" y="0"/>
+            </Anchors>
+          </Button>
+
+					<ScrollFrame name="$parentScrollFrame" inherits="FauxScrollFrameTemplate">
+						<Size x="575" y="339"/>
+						<Anchors>
+							<Anchor point="TOPRIGHT" x="40" y="-72"/>
+						</Anchors>
+						<Layers>
+							<Layer level="ARTWORK">
+								<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Size x="31" y="256"/>
+									<Anchors>
+										<Anchor point="TOPLEFT" relativePoint="TOPRIGHT" x="-2" y="5"/>
+									</Anchors>
+									<TexCoords left="0" right="0.484375" top="0" bottom="1.0"/>
+								</Texture>
+								<Texture file="Interface\PaperDollInfoFrame\UI-Character-ScrollBar">
+									<Size x="31" y="106"/>
+									<Anchors>
+										<Anchor point="BOTTOMLEFT" relativePoint="BOTTOMRIGHT" x="-2" y="-2"/>
+									</Anchors>
+									<TexCoords left="0.515625" right="1.0" top="0" bottom="0.4140625"/>
+								</Texture>
+							</Layer>
+						</Layers>
+						<Scripts>
+							<OnVerticalScroll>
+								FauxScrollFrame_OnVerticalScroll(self, offset, AUCTIONS_BUTTON_HEIGHT, DashboardFrameDetails_Update);
+							</OnVerticalScroll>
+						</Scripts>
+					</ScrollFrame>
+
+					<Button name="$parentButton1" inherits="DashboardButtonTemplate" id="1">
+						<Anchors>
+							<Anchor point="TOPLEFT" x="-12" y="-77"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton2" inherits="DashboardButtonTemplate" id="2">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton1" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton3" inherits="DashboardButtonTemplate" id="3">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton2" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton4" inherits="DashboardButtonTemplate" id="4">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton3" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton5" inherits="DashboardButtonTemplate" id="5">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton4" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton6" inherits="DashboardButtonTemplate" id="6">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton5" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton7" inherits="DashboardButtonTemplate" id="7">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton6" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton8" inherits="DashboardButtonTemplate" id="8">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton7" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton9" inherits="DashboardButtonTemplate" id="9">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton8" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton10" inherits="DashboardButtonTemplate" id="10">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton9" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton11" inherits="DashboardButtonTemplate" id="11">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton10" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton12" inherits="DashboardButtonTemplate" id="12">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton11" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton13" inherits="DashboardButtonTemplate" id="13">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton12" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton14" inherits="DashboardButtonTemplate" id="14">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton13" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton15" inherits="DashboardButtonTemplate" id="15">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton14" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton16" inherits="DashboardButtonTemplate" id="16">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton15" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton17" inherits="DashboardButtonTemplate" id="17">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton16" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+					<Button name="$parentButton18" inherits="DashboardButtonTemplate" id="18">
+						<Anchors>
+							<Anchor point="TOPLEFT" relativeTo="$parentButton17" relativePoint="BOTTOMLEFT" x="0" y="0"/>
+						</Anchors>
+					</Button>
+
+
+					<Button name="$parentCloseButton" inherits="UIPanelButtonTemplate" text="CLOSE">
+						<Size>
+							<AbsDimension x="240" y="22"/>
+						</Size>
+						<Anchors>
+							<Anchor point="BOTTOMRIGHT" relativePoint="BOTTOMRIGHT">
+								<Offset>
+									<AbsDimension x="66" y="14"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnClick>
+								HideUIPanel(self:GetParent():GetParent());
+							</OnClick>
+						</Scripts>
+					</Button>
+				</Frames>
+			</Frame>
+		</Frames>
+		<Scripts>
+			<OnLoad function="DashboardFrame_OnLoad"/>
+			<OnShow function="DashboardFrame_OnShow"/>
+			<OnHide>
+				PlaySound(SOUNDKIT.IG_CHARACTER_INFO_CLOSE);
+			</OnHide>
+			<OnMouseWheel>
+				<!-- Disable camera zooming on auction frame. -->
+				return;
+			</OnMouseWheel>
+      <OnDragStart>self:StartMoving();</OnDragStart>
+      <OnDragStop>self:StopMovingOrSizing();</OnDragStop>
+		</Scripts>
+	</Frame>
+
+
+
+</Ui>

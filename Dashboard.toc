@@ -1,0 +1,14 @@
+## Interface: 80200
+## Title: |cCC3333ffDashboard|r
+## Notes: Gives a basic overview of your characters
+
+## Author: Armsageddon@Netherwind
+## Version: 1.0
+## X-License: GNU General Public License Version 3
+## X-Category: Inventory
+
+## SavedVariables: DashboardDataStore
+
+Dashboard.lua
+Dashboard.DB.lua
+Dashboard.xml
