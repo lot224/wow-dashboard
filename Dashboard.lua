@@ -27,6 +27,7 @@ function DashboardDataFrame_OnEvent(self, event, arg1)
   --elseif event == "PLAYER_XP_UPDATE" then
   --elseif event == "PLAYER_ENTERING_WORLD" then
   --elseif event == "TRADE_SKILL_UPDATE" then
+  --elseif event == "PLAYER_MONEY" then
   --elseif event == "PLAYER_XP_UPDATE" then
 
   else 
